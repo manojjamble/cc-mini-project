@@ -29,7 +29,7 @@ function Login() {
         }
         try {
             console.log(API);
-            const url = `${API}/login`; 
+            const url = `${API}:8080/login`; 
             // const url = `http://localhost:8080/auth/login`;
             const response = await fetch(url, {
                 method: "POST",
@@ -38,6 +38,7 @@ function Login() {
                 },
                 body: JSON.stringify(loginInfo)
             });
+            const uiurl = `${API}:5173/`;
             const result = await response.json();
             const { success, message, jwtToken, name, error } = result;
             if (success) {
@@ -45,7 +46,7 @@ function Login() {
                 localStorage.setItem('token', jwtToken);
                 localStorage.setItem('loggedInUser', name);
                 setTimeout(() => {
-                    navigate('/home')
+                    window.location.href = uiurl;
                 }, 1000)
             } else if (error) {
                 const details = error?.details[0].message;

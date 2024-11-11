@@ -57,16 +57,15 @@ const Contact = () => {
               <p className="text-lg">
                 {" "}
                 <span className="font-semibold">Email:</span>{" "}
-                ayush.k@toppersclubs.com
+                help@toppersclubs.com
               </p>
               <p className="text-lg">
                 {" "}
-                <span className="font-semibold">Phone No:</span> +91 8434124950
+                <span className="font-semibold">Phone No:</span> +91 9999999999
               </p>
               <p className="text-lg">
                 {" "}
-                <span className="font-semibold">Address:</span> AIIMS Delhi
-                Hostel no. 1 , <br /> East New , Delhi - 110029
+                <span className="font-semibold">Address:</span> PCCOE , <br /> Pune, 411044
               </p>
             </div>
           </div>
