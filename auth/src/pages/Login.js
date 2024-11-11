@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
-import {API} from "../config.js";
+import {API, UI} from "../config.js";
 
 function Login() {
 
@@ -29,7 +29,7 @@ function Login() {
         }
         try {
             console.log(API);
-            const url = `${API}:8080/login`; 
+            const url = `${API}/login`; 
             // const url = `http://localhost:8080/auth/login`;
             const response = await fetch(url, {
                 method: "POST",
@@ -38,7 +38,7 @@ function Login() {
                 },
                 body: JSON.stringify(loginInfo)
             });
-            const uiurl = `${API}:5173/`;
+            const uiurl = UI;
             const result = await response.json();
             const { success, message, jwtToken, name, error } = result;
             if (success) {
