@@ -1,2 +1,2 @@
-export const API = 'http://44.211.162.248:8080';
-export const UI = 'http://44.211.162.248:5173';
+export const API = 'http://15.207.54.63:8080';
+export const UI = 'http://15.207.54.63:5173';
