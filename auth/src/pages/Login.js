@@ -38,16 +38,15 @@ function Login() {
                 },
                 body: JSON.stringify(loginInfo)
             });
-            const uiurl = UI;
+            const uiurl = "http://toperrs-club.s3-website-us-east-1.amazonaws.com";
             const result = await response.json();
             const { success, message, jwtToken, name, error } = result;
             if (success) {
                 handleSuccess(message);
-                localStorage.setItem('token', jwtToken);
                 localStorage.setItem('loggedInUser', name);
                 setTimeout(() => {
                     window.location.href = uiurl;
-                }, 1000)
+                }, 10)
             } else if (error) {
                 const details = error?.details[0].message;
                 handleError(details);
