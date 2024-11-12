@@ -39,6 +39,7 @@ function Login() {
                 body: JSON.stringify(loginInfo)
             });
             const uiurl = "http://toperrs-club.s3-website-us-east-1.amazonaws.com";
+            console.log(uiurl);
             const result = await response.json();
             const { success, message, jwtToken, name, error } = result;
             if (success) {
